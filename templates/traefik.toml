@@ -51,3 +51,29 @@ domain = "{{domain.stdout}}"
 watch = true
 exposedbydefault = false
 network = "plexguide"
+
+[backends]
+  [backends.backend-jellyfin]
+    [backends.backend-jellyfin.servers]
+      [backends.backend-jellyfin.servers.server-1]
+        url = "http://192.168.1.100:8096"
+[frontends]
+  [frontends.jellyfin]
+    backend = "backend-jellyfin"
+    passHostHeader = true
+    [frontends.jellyfin.routes]
+      [frontends.jellyfin.routes.route-jellyfin-ext]
+        rule = "Host:jellyfin.{{domain.stdout}}"
+    [frontends.jellyfin.headers]
+      SSLRedirect = true
+      SSLHost = "jellyfin.{{domain.stdout}}"
+      SSLForceHost = true
+      STSSeconds = 315360000
+      STSIncludeSubdomains = true
+      STSPreload = true
+      forceSTSHeader = true
+      frameDeny = true
+      contentTypeNosniff = true
+      browserXSSFilter = true
+      customResponseHeaders = "X-Robots-Tag:noindex,nofollow,nosnippet,noarchive,notranslate,noimageindex"
+      customFrameOptionsValue = "allow-from https://{{domain.stdout}}"
