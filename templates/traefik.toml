@@ -33,6 +33,7 @@ defaultEntryPoints = ["http", "https"]
 acmeLogging = true
 email = "{{email.stdout}}"
 storage = "/etc/traefik/acme/acme.json"
+caServer = "https://acme-staging-v02.api.letsencrypt.org/directory"
 entryPoint = "https"
   [acme.dnsChallenge]
     provider = "{{provider.stdout}}"
