@@ -59,7 +59,7 @@ network = "plexguide"
   [backends.backend-jellyfin]
     [backends.backend-jellyfin.servers]
       [backends.backend-jellyfin.servers.server-1]
-        url = "http://88.99.99.94:8096"
+        url = "http://mywanip:8096"
 [frontends]
   [frontends.jellyfin]
     backend = "backend-jellyfin"
