@@ -66,10 +66,10 @@ network = "plexguide"
     passHostHeader = true
     [frontends.jellyfin.routes]
       [frontends.jellyfin.routes.route-jellyfin-ext]
-        rule = "Host:jellyfin.wethebest.net"
+        rule = "Host:jellyfin.{{domain.stdout}}"
     [frontends.jellyfin.headers]
       SSLRedirect = true
-      SSLHost = "jellyfin.wethebest.net"
+      SSLHost = "jellyfin.{{domain.stdout}}"
       SSLForceHost = true
       STSSeconds = 315360000
       STSIncludeSubdomains = true
