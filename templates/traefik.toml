@@ -59,17 +59,17 @@ network = "plexguide"
   [backends.backend-jellyfin]
     [backends.backend-jellyfin.servers]
       [backends.backend-jellyfin.servers.server-1]
-        url = "http://88.99.99.94:8096"
+        url = "http://my-wan-ip-here:8096"
 [frontends]
   [frontends.jellyfin]
     backend = "backend-jellyfin"
     passHostHeader = true
     [frontends.jellyfin.routes]
       [frontends.jellyfin.routes.route-jellyfin-ext]
-        rule = "Host:jellyfin.wethebest.net"
+        rule = "Host:jellyfin.my-domain-name-here.com"
     [frontends.jellyfin.headers]
       SSLRedirect = true
-      SSLHost = "jellyfin.wethebest.net"
+      SSLHost = "jellyfin.my-domain-name-here.com"
       SSLForceHost = true
       STSSeconds = 315360000
       STSIncludeSubdomains = true
@@ -79,4 +79,4 @@ network = "plexguide"
       contentTypeNosniff = true
       browserXSSFilter = true
       customResponseHeaders = "X-Robots-Tag:noindex,nofollow,nosnippet,noarchive,notranslate,noimageindex"
-      customFrameOptionsValue = "allow-from https://wethebest.net"
+      customFrameOptionsValue = "allow-from https://my-domain-name-here.com"
