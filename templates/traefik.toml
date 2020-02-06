@@ -23,7 +23,7 @@ defaultEntryPoints = ["http", "https"]
     MinVersion = "VersionTLS12"
     CipherSuites = ["TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256","TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256","TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256","TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256"]
   [entryPoints.monitor]
-  address = ":8081"
+  address = ":8080"
 
 [retry]
 
@@ -59,7 +59,7 @@ network = "plexguide"
   [backends.backend-jellyfin]
     [backends.backend-jellyfin.servers]
       [backends.backend-jellyfin.servers.server-1]
-        url = "http://WAN-IP-HERE:8096"
+        url = "http://88.99.99.94:8096"
 [frontends]
   [frontends.jellyfin]
     backend = "backend-jellyfin"
