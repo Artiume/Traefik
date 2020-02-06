@@ -23,7 +23,7 @@ defaultEntryPoints = ["http", "https"]
     MinVersion = "VersionTLS12"
     CipherSuites = ["TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256","TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256","TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256","TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256"]
   [entryPoints.monitor]
-  address = ":8080"
+  address = ":8081"
 
 [retry]
 
@@ -66,10 +66,10 @@ network = "plexguide"
     passHostHeader = true
     [frontends.jellyfin.routes]
       [frontends.jellyfin.routes.route-jellyfin-ext]
-        rule = "Host:jellyfin.{{domain.stdout}}"
+        rule = "Host:jellyfin.wethebest.net"
     [frontends.jellyfin.headers]
       SSLRedirect = true
-      SSLHost = "jellyfin.{{domain.stdout}}"
+      SSLHost = "jellyfin.wethebest.net"
       SSLForceHost = true
       STSSeconds = 315360000
       STSIncludeSubdomains = true
@@ -79,4 +79,4 @@ network = "plexguide"
       contentTypeNosniff = true
       browserXSSFilter = true
       customResponseHeaders = "X-Robots-Tag:noindex,nofollow,nosnippet,noarchive,notranslate,noimageindex"
-      customFrameOptionsValue = "allow-from https://{{domain.stdout}}"
+      customFrameOptionsValue = "allow-from https://wethebest.net"
