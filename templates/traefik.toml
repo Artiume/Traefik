@@ -66,10 +66,10 @@ network = "plexguide"
     passHostHeader = true
     [frontends.jellyfin.routes]
       [frontends.jellyfin.routes.route-jellyfin-ext]
-        rule = "Host:jellyfin.my-domain-name-here.com"
+        rule = "Host:jellyfin.{{domain.stdout}}"
     [frontends.jellyfin.headers]
       SSLRedirect = true
-      SSLHost = "jellyfin.my-domain-name-here.com"
+      SSLHost = "jellyfin.{{domain.stdout}}"
       SSLForceHost = true
       STSSeconds = 315360000
       STSIncludeSubdomains = true
@@ -79,4 +79,4 @@ network = "plexguide"
       contentTypeNosniff = true
       browserXSSFilter = true
       customResponseHeaders = "X-Robots-Tag:noindex,nofollow,nosnippet,noarchive,notranslate,noimageindex"
-      customFrameOptionsValue = "allow-from https://my-domain-name-here.com"
+      customFrameOptionsValue = "allow-from https:/{{domain.stdout}}"
