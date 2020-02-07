@@ -48,6 +48,18 @@ entryPoint = "https"
 #  main = "{{domain.stdout}}"
 #  sans = ["{{domain.stdout}}"]
 
+[file]
+  [backends]
+    [backends.backend1]
+      [backends.backend1.servers.server1]
+      url = "http://88.99.99.94:8096"
+      
+  [frontends] 
+    [frontends.frontend1] 
+        backend = "backend1" 
+          [frontends.frontend1.routes.test_1]
+          rule = "Host:jellyfin.{{domain.stdout}}"
+          
 [docker]
 endpoint = "unix:///var/run/docker.sock"
 domain = "{{domain.stdout}}"
@@ -59,7 +71,7 @@ network = "plexguide"
   [backends.backend-jellyfin]
     [backends.backend-jellyfin.servers]
       [backends.backend-jellyfin.servers.server-1]
-        url = "http://my-wan-ip-here:8096"
+        url = "http://88.99.99.94:8096"
 [frontends]
   [frontends.jellyfin]
     backend = "backend-jellyfin"
