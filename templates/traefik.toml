@@ -55,6 +55,8 @@ watch = true
 exposedbydefault = false
 network = "plexguide"
 
+[file]
+
 [backends]
   [backends.backend-jellyfin]
     [backends.backend-jellyfin.servers]
